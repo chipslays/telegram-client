@@ -1,0 +1,7 @@
+.vscode
+vendor
+composer.lock
+MadelineProto.log
+userbot.php
+examples/storage/sessions/*
+!examples/storage/sessions/.gitkeep

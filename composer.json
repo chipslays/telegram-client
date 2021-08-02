@@ -1,0 +1,17 @@
+{
+    "name": "chipslays/telegram-client",
+    "description": "PHP wrapper over MadelineProto for easy work with Telegram Client API.",
+    "type": "library",
+    "license": "AGPL-3.0-only",
+    "require": {
+        "chipslays/collection": "^1.1",
+        "chipslays/event": "^1.0",
+        "danog/madelineproto": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chipslays\\Telegram\\": "src/"
+        },
+        "files": ["helpers.php"]
+    }
+}
