@@ -2,14 +2,17 @@
 
 namespace Chipslays\Telegram;
 
-use Chipslays\Arr\Arr;
+use Chipslays\Telegram\Traits\ApiMethods;
+use Chipslays\Telegram\Traits\MagicMethods;
 use Chipslays\Collection\Collection;
-use Chipslays\Telegram\Traits\Methods;
+use Chipslays\Arr\Arr;
 use danog\MadelineProto\API;
+use danog\MadelineProto\Logger;
 
 class Client
 {
-    use Methods;
+    use ApiMethods;
+    use MagicMethods;
 
     /**
      * @var array
@@ -26,6 +29,11 @@ class Client
         $currentSession = "{$sessionsPath}/" . $this->config('session');
 
         $this->madeline = new API($currentSession, $this->config('madeline.settings', []));
+
+        $this->madeline->logger->colors[Logger::NOTICE] = \implode(';', [Logger::FOREGROUND['light_gray'], Logger::SET['bold'], Logger::BACKGROUND['magenta']]);
+        $this->madeline->logger('👋 PHP Telegram Client');
+        $this->madeline->logger('🔗 https://github.com/chipslays/telegram-client');
+        $this->madeline->logger->colors[Logger::NOTICE] = \implode(';', [Logger::FOREGROUND['yellow'], Logger::SET['bold']]);
 
         $this->madeline->start();
     }
