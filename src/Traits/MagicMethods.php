@@ -13,7 +13,11 @@ trait MagicMethods
      */
     public function isBotActive($chat, $waitSeconds = 3)
     {
-        $this->sendMessage($chat, '/start');
+        try {
+            $this->sendMessage($chat, '/start');
+        } catch (\Throwable $th) {
+            return false;
+        }
 
         usleep(round($waitSeconds * 1000000));
 
