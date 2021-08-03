@@ -2,7 +2,7 @@
 
 use Chipslays\Telegram\Client;
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 $client = new Client([
     'session' => 'user.chipslays',
