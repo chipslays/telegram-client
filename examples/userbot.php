@@ -34,6 +34,14 @@ $client->on(['message.message' => '.hello'], function () use ($client) {
     $client->edit('Hello World!');
 });
 
+$client->on(['message.message' => '.bday {name}'], function ($name) use ($client) {
+    if (!$client->fromMe()) {
+        return;
+    }
+
+    $client->edit("Happy Birthday, {$name}! 🎉🎂");
+});
+
 // Callback is executed on every new update
 $client->handleUpdates(function ($update) {
     Logger::log($update->toArray());
