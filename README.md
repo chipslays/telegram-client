@@ -90,8 +90,9 @@ $client->on(['message.message' => '.bday {name}'], function ($name) use ($client
     $client->edit("Happy Birthday, {$name}! 🎉🎂");
 });
 
-// Callback is executed on every new update
+// Start polling Telegram updates. 
 $client->handleUpdates(function ($update) {
+    // This executed on every new update.
     Logger::log($update->toArray());
 });
 ```
