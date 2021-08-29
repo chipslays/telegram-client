@@ -1,6 +1,6 @@
 # WIP: PHP Telegram Client
 
-PHP wrapper over MadelineProto for easy work with Telegram Client API.
+Simple & scalable PHP wrapper over MadelineProto for easy work with Telegram Client API.
 
 > 👷 Work in progress...
 
