@@ -16,6 +16,8 @@ Run this script in terminal like `php client.php`.
 
 The first time authorization will take a long time, but the next times it will be faster.
 
+> Event system based on [`chipslays/event`](https://github.com/chipslays/event), see this for more cases.
+
 ```php
 // client.php
 
