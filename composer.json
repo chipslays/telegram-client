@@ -6,7 +6,7 @@
     "require": {
         "chipslays/collection": "^1.1",
         "chipslays/event": "^1.0",
-        "danog/madelineproto": "^6.0"
+        "danog/madelineproto": "^7.0"
     },
     "autoload": {
         "psr-4": {
